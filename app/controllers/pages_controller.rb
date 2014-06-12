@@ -22,7 +22,7 @@ class PagesController < ApplicationController
   def update
     @page = current_user.sites.find_by_slug(params[:site_id]).pages.find_by_slug(params[:id]) || current_user.sites.find_by_slug(params[:site_id]).pages.find_by_slug(params[:page_id])
     @site = current_user.sites.find(params[:site_id])
-    @page.update_attributes
+    @page.update_attributes(params[:page])
     redirect_to @site
   end
 

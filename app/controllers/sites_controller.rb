@@ -27,7 +27,7 @@ class SitesController < ApplicationController
 
   def update
     @site = current_user.sites.find_by_slug(params[:id]) || current_user.sites.find_by_slug(params[:site_id])
-    @site.update_attributes
+    @site.update_attributes(params[:site])
     redirect_to @site
   end
 
