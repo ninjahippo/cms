@@ -1,0 +1,21 @@
+<ul>
+  <% @sites.each do |site| %>
+    <li>
+      <h3><%= link_to site.title, site %></h3>
+      <%= link_to 'Edit', edit_site_path(site) %>
+      <ul>
+        <% site.pages.each do |page| %>
+          <li>
+            <%= link_to page.title, site_page_path(site, page) %> - <%= link_to 'Edit', edit_site_page_path(site, page) %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to 'New Page', new_site_page_path(site) %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to 'New Site', new_site_path %>
+  </li>
+</ul>

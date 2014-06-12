@@ -1,0 +1,21 @@
+<%= link_to 'Back to home', root_url %>
+
+<h2><%= @site.title %></h2>
+
+<p>
+  Meta:
+  <ul>
+    <li> Slug: <%= @site.slug %> </li>
+    <li> Application Token: <%= @site.application_token %> </li>
+  </ul>
+</p>
+
+<p>
+  Pages:
+  <ul>
+    <% @site.pages.each do |page| %>
+      <li><%= link_to page.title, site_page_path(@site, page) %> - <%= link_to 'Edit', edit_site_page_path(@site, page) %></li>
+    <% end %>
+    <li> <%= link_to 'New Page', new_site_page_path(@site) %> </li>
+  </ul>
+</p>

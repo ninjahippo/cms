@@ -1,0 +1,5 @@
+<%= form_for [@site, @page] do |f| %>
+  <%= f.label :title %><%= f.text_field :title %><br>
+  <%= f.label :html   %><%= f.text_area :html   %><br>
+  <%= f.submit %>
+<% end %>
