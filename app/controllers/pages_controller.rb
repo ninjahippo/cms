@@ -28,7 +28,10 @@ class PagesController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { redirect_to page.site.url + page.slug }
+      format.html { 
+        page = current_user.sites.find_by_slug(params[:site_id]).pages.find_by_slug(params[:id])
+        redirect_to page.site.url + page.slug
+      }
       format.json { 
         if Site.find_by_application_token(params[:application_token]) and Site.find_by_application_token(params[:application_token]).pages.where(:slug => params[:id]).any?
           render json: Site.find_by_application_token(params[:application_token]).pages.where(:slug => params[:id])
