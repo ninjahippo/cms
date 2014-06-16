@@ -26,6 +26,10 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
       templateUrl: '/views/signin.html',
       controller: 'SignInCtrl'
     })
+    .when('/signup', {
+      templateUrl: '/views/signup.html',
+      controller: 'SignUpCtrl'
+    })
 
     .when('/sites/new', {
       templateUrl: '/views/sites/new.html',
