@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140612182649) do
+ActiveRecord::Schema.define(:version => 20140613163237) do
 
   create_table "pages", :force => true do |t|
+    t.integer  "site_id"
     t.string   "title"
     t.text     "html"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
-    t.integer  "site_id"
   end
 
   create_table "sites", :force => true do |t|
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20140612182649) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "authentication_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

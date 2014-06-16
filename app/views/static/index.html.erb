@@ -1,2 +1,29 @@
-<h1>Welcome.</h1>
-<%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
+<div class="container" ng-view=""></div>
+
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-csrf/angular-csrf.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-devise/lib/devise-min.js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/restangular/restangular.js"></script>
+
+
+<script src="/scripts/app.js"></script>
+
+<script src="/scripts/factories/authInterceptor.js"></script>
+
+<script src="/scripts/directives/usernav.js"></script>
+
+<script src="/scripts/controllers/index.js"></script>
+<script src="/scripts/controllers/dashboard.js"></script>
+<script src="/scripts/controllers/signin.js"></script>
+
+<script src="/scripts/controllers/sites/new.js"></script>
+<script src="/scripts/controllers/sites/show.js"></script>
+<script src="/scripts/controllers/sites/edit.js"></script>
+
+<script src="/scripts/controllers/pages/new.js"></script>
+<script src="/scripts/controllers/pages/edit.js"></script>
