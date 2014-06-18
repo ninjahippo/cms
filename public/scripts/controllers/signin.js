@@ -4,7 +4,6 @@ angular.module('NinjahippoCMS').controller('SignInCtrl', function ($scope, Resta
   function login(u) {
     u = u || {};
     Auth.login(u).then(function(user){
-      $rootScope.api_token = user.authentication_token
       $location.path('/dashboard');
     })
   }

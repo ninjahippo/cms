@@ -10,7 +10,7 @@ var app = angular.module('NinjahippoCMS', [
     'Devise'
   ]);
 
-app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$httpProvider', function(RestangularProvider, $routeProvider, $locationProvider, $httpProvider){
+app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$httpProvider', 'AuthProvider', function(RestangularProvider, $routeProvider, $locationProvider, $httpProvider, AuthProvider){
   $httpProvider.responseInterceptors.push('authInterceptor');
 
   $routeProvider
@@ -58,6 +58,15 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
     });
 
 
-    RestangularProvider.setBaseUrl('http://ninjahippo-api-production.herokuapp.com/v1');
+    RestangularProvider.setBaseUrl('http://localhost:3000/v1');
     $locationProvider.html5Mode(true);
 }]);
+
+app.service('api', function($rootScope, $http) {
+  this.getToken = function() {
+    return $http({
+      url: '/auth_token.json',
+      method: 'GET'
+    });
+  };
+});

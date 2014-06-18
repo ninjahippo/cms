@@ -9,6 +9,8 @@ NinjahippoCms::Application.routes.draw do
     end
   end
 
+  get '/auth_token' => 'static#auth_token'
+
   match '*path' => 'static#index'
 
   root :to => 'static#index'

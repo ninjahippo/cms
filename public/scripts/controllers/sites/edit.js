@@ -1,13 +1,20 @@
 'use strict';
 
-angular.module('NinjahippoCMS').controller('EditSiteCtrl', function ($scope, Restangular, $filter, Auth, $location, $rootScope, $routeParams) {
-  Restangular.one('sites', $routeParams.slug).get({api_token: $rootScope.api_token}).then(function(site){
-    $scope.site = site;
+angular.module('NinjahippoCMS').controller('EditSiteCtrl', function (api, $scope, Restangular, $filter, Auth, $location, $rootScope, $routeParams) {
+  var api_token;
+
+  api.getToken().success(function(d,s,h,c){
+    Restangular.one('sites', $routeParams.slug).get({api_token: d.token}).then(function(site){
+      $scope.site = site;
+    });
   });
 
   $scope.edit_site = function(site) {
-    Restangular.one('sites', $routeParams.slug).customPUT($scope.site, {api_token: $rootScope.api_token}).then(function(){
+    $scope.site.put({api_token: api_token}).then(function(){
       $location.path('/dashboard')
-    });
+    })
+    // Restangular.one('sites', $routeParams.slug).put($scope.site, {api_token: api_token}).then(function(){
+    //   $location.path('/dashboard')
+    // });
   }
 });
