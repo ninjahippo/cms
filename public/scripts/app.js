@@ -59,6 +59,5 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
 
 
     RestangularProvider.setBaseUrl('http://ninjahippo-api-production.herokuapp.com/v1');
-
-  $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
 }]);

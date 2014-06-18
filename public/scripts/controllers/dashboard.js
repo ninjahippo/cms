@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('NinjahippoCMS').controller('DashboardCtrl', function ($scope, Restangular, $filter, Auth, $location, $rootScope) {
-  Restangular.all('sites').getList().then(function(sites) {
+  Restangular.all('sites').getList({api_token: $rootScope.api_token}).then(function(sites) {
     $scope.sites = sites;
   });
 
