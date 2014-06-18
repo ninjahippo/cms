@@ -20,3 +20,5 @@ end
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem 'ng-rails-csrf'

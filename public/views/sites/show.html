@@ -1,0 +1,24 @@
+<user-nav></user-nav>
+
+<h3>{{site.title}}</h3>
+<a href="/sites/{{site.slug}}/edit">Edit</a>
+
+<p>
+  Meta:
+  <ul>
+    <li>Slug: {{site.slug}}</li>
+    <li>Application Token: {{site.application_token}}</li>
+  </ul>
+</p>
+
+<p>
+  Pages:
+  <ul>
+    <li ng-repeat="page in site.pages">
+      <a href="{{site.url}}/{{page.slug}}">{{page.title}}</a> - <a href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">Edit</a>
+    </li>
+    <li>
+      <a href="/sites/{{site.slug}}/pages/new">New Page</a>
+    </li>
+  </ul>
+</p>

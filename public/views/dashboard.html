@@ -1,0 +1,19 @@
+<user-nav></user-nav>
+
+<ul>
+  <li ng-repeat="site in sites">
+    <h3><a href="/sites/{{site.slug}}">{{site.title}}</a></h3>
+    <a href="/sites/{{site.slug}}/edit">Edit</a>
+    <ul>
+      <li ng-repeat="page in site.pages">
+        <a href="{{site.url}}/{{page.slug}}">{{page.title}}</a> - <a href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">Edit</a>
+      </li>
+      <li>
+        <a href="/sites/{{site.slug}}/pages/new">New Page</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/sites/new">New Site</a>
+  </li>
+</ul>
