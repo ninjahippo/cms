@@ -4,7 +4,7 @@ angular.module('NinjahippoCMS').controller('NewPageCtrl', function (api, $scope,
   $scope.create_page = function(page) {
     api.getToken().success(function(d,s,h,c){
       Restangular.one('sites', $routeParams.site_slug).post('pages', page, {api_token: d.token}).then(function(){
-        $location.path('/dashboard')
+        $location.path('/sites/'+$routeParams.site_slug)
       })
     });
   }
