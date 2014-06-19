@@ -1,0 +1,121 @@
+header {
+  font-family: 'Lilita One';
+  border-bottom: 1px solid rgb(140,0,140);
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+header .logo {
+  display: inline-block;
+}
+
+header .logo a {
+  color: rgb(140,0,140);
+  font-size: 3.6em;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+header .meta {
+  display: inline-block;
+  float:right;
+}
+
+header .meta a {
+  position: relative;
+  color: rgb(140,0,140);
+  font-size: 1.5em;
+  text-decoration: none;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto 5px;
+  border: 1px solid rgb(140,0,140);
+  border-radius: 8px;
+  line-height: 60px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header .meta a:hover {
+  background-color: rgb(140,0,140);
+  color: white;
+}
+
+*::selection {
+  background-color: rgb(140,0,140);
+  color: white;
+}
+
+header .meta .user span {
+  line-height: 60px;
+  font-size: 1.5em;
+}
+
+.sites a, .pages a {
+  border: 1px solid rgb(140,0,140);
+  border-radius: 8px;
+  text-decoration: none;
+  height: 200px;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.sites a h3, .pages a h3 {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  color: rgb(140,0,140);
+}
+
+.sites a:hover, .pages a:hover {
+  background-color: rgb(140,0,140);
+}
+
+.sites a:hover h3, .pages a:hover h3 {
+  color: white;
+}
+
+h1 a {
+  font-size: 60%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  border: 1px solid rgb(140,0,140);
+  border-radius: 8px;
+  line-height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  color: rgb(140,0,140);
+}
+
+h1 a:hover {
+  background-color: rgb(140,0,140);
+  color: white;
+}
+
+pre {
+  font-family: monospace;
+  color: rgb(140,0,140);
+}
+
+.container.form {
+  text-align: center;
+}
+
+.container.form form input[type='text'], .container.form form input[type='email'], .container.form form input[type='password'], textarea {
+  display: inline-block;
+}

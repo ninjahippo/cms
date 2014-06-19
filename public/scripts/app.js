@@ -14,10 +14,6 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
   $httpProvider.responseInterceptors.push('authInterceptor');
 
   $routeProvider
-    .when('/', {
-      templateUrl: '/views/index.html',
-      controller: 'IndexCtrl'
-    })
     .when('/dashboard', {
       templateUrl: '/views/dashboard.html',
       controller: 'DashboardCtrl'
@@ -54,11 +50,11 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
     })
 
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/dashboard'
     });
 
 
-    RestangularProvider.setBaseUrl('http://api.ninjahippo.io/v1');
+    RestangularProvider.setBaseUrl('http://localhost:3000/v1');
     $locationProvider.html5Mode(true);
 }]);
 

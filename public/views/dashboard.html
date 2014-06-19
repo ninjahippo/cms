@@ -1,19 +1,11 @@
-<user-nav></user-nav>
+<nh-header></nh-header>
 
-<ul>
-  <li ng-repeat="site in sites">
-    <h3><a href="/sites/{{site.slug}}">{{site.title}}</a></h3>
-    <a href="/sites/{{site.slug}}/edit">Edit</a>
-    <ul>
-      <li ng-repeat="page in site.pages">
-        <a href="{{site.url}}/{{page.slug}}">{{page.title}}</a> - <a href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">Edit</a>
-      </li>
-      <li>
-        <a href="/sites/{{site.slug}}/pages/new">New Page</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="/sites/new">New Site</a>
-  </li>
-</ul>
+<main>
+  <div class="container">
+    <h1> your sites. </h1>
+    <div class="sites">
+      <a class="one-third column" ng-repeat="site in sites" href="/sites/{{site.slug}}"><h3>{{site.title}}</h3></a>
+      <a class="one-third column" href="/sites/new"><h3>new site.</h3></a>
+    </div>
+  </div>
+</main>

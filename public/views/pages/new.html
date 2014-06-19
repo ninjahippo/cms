@@ -1,8 +1,16 @@
-<user-nav></user-nav>
+<nh-header></nh-header>
 
-<h2> New Page </h2>
-<form>
-  Title: <input type="text" ng-model="page.title"> <br>
-  HTML: <textarea ng-model="page.html"></textarea></br>
-  <input type="submit" ng-click="create_page(page)">
-</form>
+<main>
+  <div class="container form">
+    <h2> new page. </h2>
+    <form>
+      <label for="title">Title:</label>
+      <input name="title" type="text" ng-model="page.title"> <br>
+
+      <label for="html">HTML:</label>
+      <textarea name="html" ng-model="page.html"></textarea></br>
+
+      <input type="submit" ng-click="create_page(page)">
+    </form>
+  </div>
+</main>

@@ -1,0 +1,20 @@
+<header>
+  <div class="container">
+    <div class="logo">
+      <a href="/dashboard">
+        ninjahippo.
+      </a>
+    </div>
+
+    <div class="meta">
+      <div class="options" ng-show="show_signin_signup">
+        <a href="/signin">sign in</a>
+        <a href="/signup">sign up</a>
+      </div>
+
+      <div class="user" ng-show="!show_signin_signup">
+        <span>Signed in as {{user.email}}</span> <a href="" ng-click="logout()">Sign out?</a>
+      </div>
+    </div>
+  </div>
+</div>

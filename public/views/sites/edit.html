@@ -1,8 +1,16 @@
-<user-nav></user-nav>
+<nh-header></nh-header>
 
-<h2> Edit Site </h2>
-<form>
-  Title: <input type="text" ng-model="site.title"> <br>
-  URL: <input type="text" ng-model="site.url"></br>
-  <input type="submit" ng-click="edit_site(site)">
-</form>
+<main>
+  <div class="container form">
+    <h2> edit site. </h2>
+    <form>
+      <label for="title">Title:</label>
+      <input name="title" type="text" ng-model="site.title"> <br>
+
+      <label for="url">URL:</label>
+      <input name="url" type="text" ng-model="site.url"></br>
+
+      <input type="submit" ng-click="edit_site(site)">
+    </form>
+  </div>
+</main>

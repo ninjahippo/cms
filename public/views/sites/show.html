@@ -1,24 +1,21 @@
-<user-nav></user-nav>
+<nh-header></nh-header>
 
-<h3>{{site.title}}</h3>
-<a href="/sites/{{site.slug}}/edit">Edit</a>
+<main>
+  <div class="container">
+    <h1>{{site.title}} <a href="/sites/{{site.slug}}/edit">Edit</a></h1>
 
-<p>
-  Meta:
-  <ul>
-    <li>Slug: {{site.slug}}</li>
-    <li>Application Token: {{site.application_token}}</li>
-  </ul>
-</p>
 
-<p>
-  Pages:
-  <ul>
-    <li ng-repeat="page in site.pages">
-      <a href="{{site.url}}/{{page.slug}}">{{page.title}}</a> - <a href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">Edit</a>
-    </li>
-    <li>
-      <a href="/sites/{{site.slug}}/pages/new">New Page</a>
-    </li>
-  </ul>
-</p>
+    <div class="site_meta">
+
+      <pre>
+        app_slug = {{site.slug}}
+        app_token = {{site.application_token}}
+      </pre>
+    </div>
+
+    <div class="pages">
+      <a class="one-third column" ng-repeat="page in site.pages" href="/sites/{{site.slug}}/pages/{{page.slug}}/edit"><h3>{{page.title}}</h3></a>
+      <a class="one-third column" href="/sites/{{site.slug}}/pages/new"><h3>new page.</h3></a>
+    </div>
+  </div>
+</main>
