@@ -7,14 +7,12 @@ angular.module('NinjahippoCMS').controller('EditSiteCtrl', function (api, $scope
     Restangular.one('sites', $routeParams.slug).get({api_token: d.token}).then(function(site){
       $scope.site = site;
     });
+    api_token = d.token;
   });
 
   $scope.edit_site = function(site) {
     $scope.site.put({api_token: api_token}).then(function(){
       $location.path('/dashboard')
     })
-    // Restangular.one('sites', $routeParams.slug).put($scope.site, {api_token: api_token}).then(function(){
-    //   $location.path('/dashboard')
-    // });
   }
 });
