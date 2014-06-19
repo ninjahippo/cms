@@ -17,6 +17,12 @@ header .logo a {
   text-decoration: none;
 }
 
+header .logo a .alpha {
+  color: #999;
+  font-family: monospace;
+  font-size: 0.5em;
+}
+
 header .meta {
   display: inline-block;
   float:right;
