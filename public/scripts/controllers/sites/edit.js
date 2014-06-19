@@ -12,7 +12,7 @@ angular.module('NinjahippoCMS').controller('EditSiteCtrl', function (api, $scope
 
   $scope.edit_site = function(site) {
     $scope.site.put({api_token: api_token}).then(function(){
-      $location.path('/dashboard')
-    })
+      $location.path('/dashboard');
+    });
   }
 });
