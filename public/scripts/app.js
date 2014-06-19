@@ -58,7 +58,7 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
     });
 
 
-    RestangularProvider.setBaseUrl('http://api.ninjahippo.io/v1');
+    RestangularProvider.setBaseUrl('http://localhost:3000/v1');
     $locationProvider.html5Mode(true);
 }]);
 

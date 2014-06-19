@@ -10,7 +10,7 @@ angular.module('NinjahippoCMS').controller('EditPageCtrl', function (api, $scope
   });
 
   $scope.edit_page = function(page) {
-    Restangular.one('sites', $routeParams.site_slug).one('pages', $routeParams.slug).customPUT($scope.page, {api_token: api_token}).then(function(){
+   $scope.page.put({api_token: api_token}).then(function(){
       $location.path('/dashboard')
     })
   }
