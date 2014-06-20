@@ -6,11 +6,21 @@ angular.module('NinjahippoCMS').controller('EditPageCtrl', function (api, $scope
   api.getToken().success(function(d,s,h,c){
     Restangular.one('sites', $routeParams.site_slug).one('pages', $routeParams.slug).get({api_token: d.token}).then(function(page){
       $scope.page = page;
+      $(document).ready(function() {
+        $('textarea').wymeditor({
+          html: $scope.page.html
+        });
+      })
     });
     api_token = d.token;
   });
 
-  $scope.edit_page = function(page) {
+  $('textarea[ng-model="page.html"]').on('change', function(){
+    $scope.page.html = $('textarea[ng-model="page.html"]').val();
+    $scope.edit_page()
+  })
+
+  $scope.edit_page = function() {
     $scope.page.put({api_token: api_token}).then(function(){
       $location.path('/sites/'+$routeParams.site_slug)
     });
