@@ -2,6 +2,7 @@
 
 angular.module('NinjahippoCMS').controller('DashboardCtrl', function (api, $scope, Restangular, $filter, Auth, $location, $rootScope) {
   api.getToken().success(function(d,s,h,c){
+    $scope.token = d.token;
     Restangular.all('sites').getList({api_token: d.token}).then(function(sites) {
       $scope.sites = sites;
       for (var i = 0; i < $scope.sites.length; i++) {

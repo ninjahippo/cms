@@ -3,6 +3,9 @@
 <main>
   <div class="container">
     <h1> your sites. </h1>
+    <pre>
+      api_token = {{token}}
+    </pre>
     <div class="sites">
       <a class="one-third column" ng-repeat="site in sites" href="/sites/{{site.slug}}"><h3>{{site.title}}</h3></a>
       <a class="one-third column" href="/sites/new"><h3>new site.</h3></a>
