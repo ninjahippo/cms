@@ -12,10 +12,12 @@ angular.module('NinjahippoCMS').directive('nhHeader', function(Auth, $location) 
         $scope.show_signin_signup = false;
         Auth.currentUser().then(function(user) {
           $scope.user = user;
+          if (!user.error) {
+            if ((['/signup', '/signin'].indexOf(window.location.pathname) > -1)) {
+              $location.path('/dashboard');
+            }
+          }
         })
-        if ((['/signup', '/signin'].indexOf(window.location.pathname) > -1)) {
-          $location.path('/dashboard');
-        }
       }
       $scope.logout = function() {
         Auth.logout().then(function(){

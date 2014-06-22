@@ -3,7 +3,10 @@
 <main>
   <div class="container form">
     <h2> sign in. </h2>
-    <form>
+    <form novalidate>
+      <ul class="errors">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
       <label for="email">Email:</label>
       <input name="email" type="email" ng-model="user.email"> <br>
 

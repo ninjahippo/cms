@@ -4,12 +4,15 @@
   <div class="container">
     <h2 class="center"> edit page. </h2>
 
-    <form>
+    <form novalidate>
+      <ul class="errors">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
       <label for="title">Title:</label>
-      <input name="title" type="text" ng-model="page.title"> <br>
+      <input name="title" type="text" ng-model="page.title" required> <br>
 
       <label for="html">HTML:</label>
-      <textarea name="html" ng-model="page.html"></textarea></br>
+      <textarea name="html" ng-model="page.html" required></textarea></br>
 
       <input type="submit" class="wymupdate center">
     </form>

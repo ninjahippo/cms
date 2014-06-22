@@ -13,6 +13,13 @@ angular.module('NinjahippoCMS').controller('EditSiteCtrl', function (api, $scope
   $scope.edit_site = function(site) {
     $scope.site.put({api_token: api_token}).then(function(){
       $location.path('/sites/'+$routeParams.slug);
+    }, function(error) {
+      $scope.errors = []
+      if (error.data.message.indexOf('duplicate key') > -1) {
+        $scope.errors.push('Site name taken. Please choose a different name.')
+      } else {
+        $scope.errors.push(error.data.message)
+      }
     });
   }
 });

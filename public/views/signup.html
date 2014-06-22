@@ -4,6 +4,9 @@
   <div class="container form">
     <h2> sign up. </h2>
     <form>
+      <ul class="errors">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
       <label for="email">Email:</label>
       <input name="email" type="email" ng-model="user.email"> <br>
 

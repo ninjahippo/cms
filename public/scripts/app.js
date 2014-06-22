@@ -11,7 +11,8 @@ var app = angular.module('NinjahippoCMS', [
   ]);
 
 app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$httpProvider', 'AuthProvider', function(RestangularProvider, $routeProvider, $locationProvider, $httpProvider, AuthProvider){
-  $httpProvider.responseInterceptors.push('authInterceptor');
+  // $httpProvider.responseInterceptors.push('authInterceptor');
+  $httpProvider.interceptors.push('errorInterceptor');
 
   $routeProvider
     .when('/dashboard', {
@@ -54,7 +55,7 @@ app.config(['RestangularProvider', '$routeProvider', '$locationProvider', '$http
     });
 
 
-    RestangularProvider.setBaseUrl('http://api.ninjahippo.io/v1');
+    RestangularProvider.setBaseUrl('http://localhost:3000/v1');
     $locationProvider.html5Mode(true);
 }]);
 

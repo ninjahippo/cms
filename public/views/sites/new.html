@@ -3,9 +3,12 @@
 <main>
   <div class="container form">
     <h2> new site. </h2>
-    <form>
+    <form novalidate>
+      <ul class="errors">
+        <li ng-repeat="error in errors">{{error}}</li>
+      </ul>
       <label for="title">Title:</label>
-      <input name="title" type="text" ng-model="site.title"> <br>
+      <input name="title" type="text" ng-model="site.title" required> <br>
 
       <label for="url">URL:</label>
       <input name="url" type="text" ng-model="site.url"></br>
