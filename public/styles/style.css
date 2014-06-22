@@ -8,6 +8,7 @@ header {
   padding-top: 10px;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  color: rgb(140,0,140);
 }
 
 header .logo {
@@ -43,6 +44,8 @@ header .meta a {
   padding-left: 15px;
   margin: auto 5px;
   border: 1px solid rgb(140,0,140);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   line-height: 60px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -68,6 +71,8 @@ header .meta .user span {
 
 .sites a, .pages a {
   border: 1px solid rgb(140,0,140);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   text-decoration: none;
   height: 200px;
@@ -103,6 +108,8 @@ h1 a {
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   border: 1px solid rgb(140,0,140);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   line-height: 100%;
   padding-right: 10px;
@@ -137,6 +144,42 @@ footer {
   text-align: center;
 }
 
-.container.form form input[type='text'], .container.form form input[type='email'], .container.form form input[type='password'], textarea {
+.container form input[type='text'], .container.form form input[type='email'], .container.form form input[type='password'], textarea {
   display: inline-block;
+}
+
+.container form input[type='submit'] {
+  background-color: white;
+}
+
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+  background: #fff; 
+  border: 1px solid rgb(140,0,140);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  color: rgb(140,0,140);
+  display: inline-block;
+  font-size: 1em;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  text-shadow: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: normal;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin: auto 5px;
+  font-family: "Lilita One", sans-serif; 
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
+  color: #fff;
+  background: rgb(140,0,140) !important;
 }
