@@ -85,18 +85,33 @@ header .meta .user span {
   margin-bottom: 10px !important;
 }
 
-.sites a h3, .pages a h3 {
+.sites a h3:not(.new), .pages a h3:not(.new) {
   position: absolute;
+  right: 20px;
+  bottom: 30px;
+  color: rgb(140,0,140);
+}
+
+.sites a h3.new, .pages a h3.new {
+  position:absolute;
   right: 20px;
   bottom: 10px;
   color: rgb(140,0,140);
+}
+
+.sites a code, .pages a code {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: rgb(140,0,140);
+  font-family: monospace;
 }
 
 .sites a:hover, .pages a:hover {
   background-color: rgb(140,0,140);
 }
 
-.sites a:hover h3, .pages a:hover h3 {
+.sites a:hover h3, .pages a:hover h3, .pages a:hover code, .sites a:hover code {
   color: white;
 }
 

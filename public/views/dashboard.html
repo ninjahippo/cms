@@ -7,8 +7,13 @@
       api_token = {{token}}
     </pre>
     <div class="sites">
-      <a class="one-third column" ng-repeat="site in sites" href="/sites/{{site.slug}}"><h3>{{site.title}}</h3></a>
-      <a class="one-third column" href="/sites/new"><h3>new site.</h3></a>
+      <a class="one-third column" ng-repeat="site in sites" href="/sites/{{site.slug}}">
+        <h3>{{site.title}}</h3>
+        <code> app_slug = {{site.shown_slug}} </code>
+      </a>
+      <a class="one-third column" href="/sites/new">
+        <h3 class="new">new site.</h3>
+      </a>
     </div>
   </div>
 </main>
