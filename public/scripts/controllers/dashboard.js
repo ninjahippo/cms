@@ -14,18 +14,16 @@ angular.module('NinjahippoCMS').controller('DashboardCtrl', function (api, $scop
         if (site.slug.length > 21) {
           site.shown_slug = site.slug.substr(0,18) + '...';
         }
-
-        $scope.sites[i].pages = [];
-        Restangular.one('sites', $scope.sites[i].slug).getList('pages', {api_token: d.token}).then(function(pages){
-          for (var i = 0; i < pages.length; i++) {
-            $scope.sites[i].pages.push(pages[i]);
-          }
-        });
       }
     });
   });
-  
-  $scope.$on('devise:unauthorized', function(event, xhr, deferred) {
-    $location.path('/signin');
-  });
+
+  $scope.delete_site = function(site, $event) {
+    $event.preventDefault();
+    if (confirm("Are you sure you want to delete this site?")) {
+      site.remove({slug: site.slug, api_token: $scope.token}).then(function(res) {
+        $scope.sites = _.without($scope.sites, site);
+      })
+    }
+  }
 });

@@ -2,6 +2,7 @@
 
 angular.module('NinjahippoCMS').controller('ShowSiteCtrl', function (api, $scope, Restangular, $filter, Auth, $location, $rootScope, $routeParams) {
   api.getToken().success(function(d,s,h,c){
+    $scope.api_token = d.token;
     Restangular.one('sites', $routeParams.slug).get({api_token: d.token}).then(function(site){
       $scope.site = site;
       Restangular.one('sites', $routeParams.slug).getList('pages', {api_token: d.token}).then(function(pages){
@@ -18,6 +19,25 @@ angular.module('NinjahippoCMS').controller('ShowSiteCtrl', function (api, $scope
           }
         }
       })
+    }, function(err) {
+      $location.path('/dashboard')
     });
   });
+
+  $scope.delete_site = function() {
+    if (confirm("Are you sure you want to delete this site?")) {
+      $scope.site.remove({slug: $routeParams.slug, api_token: $scope.api_token}).then(function(res) {
+        $location.path('/dashboard')
+      })
+    }
+  }
+
+  $scope.delete_page = function(page, $event) {
+    $event.preventDefault();
+    if (confirm("Are you sure you want to delete this page?")) {
+      page.remove({slug: page.slug, api_token: $scope.api_token}).then(function(res) {
+        $scope.site.pages = _.without($scope.site.pages, page)
+      })
+    }
+  }
 });

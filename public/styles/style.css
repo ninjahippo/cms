@@ -115,8 +115,30 @@ header .meta .user span {
   color: white;
 }
 
+.sites a .remove, .pages a .remove {
+  display: inline-block;
+  padding-bottom: 3.5px;
+  padding-right: 6px;
+  padding-left: 6px;
+  font-size: 20px;
+  position:relative;
+  text-align: center;
+  vertical-align: middle;
+  top: 12px;
+  left: 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.sites a .remove:hover, .pages a .remove:hover {
+  color: rgb(140,0,140);
+  background-color: white;
+}
+
 h1 a {
-  font-size: 60%;
+  font-size: 50%;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -127,11 +149,14 @@ h1 a {
   -webkit-border-radius: 8px;
   border-radius: 8px;
   line-height: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-top: 3.5px;
-  padding-bottom: 3.5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
   color: rgb(140,0,140);
+  display: inline-block;
+  margin: auto 5px 5px;
+  vertical-align: middle;
 }
 
 h1 a:hover {
