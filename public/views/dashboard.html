@@ -7,7 +7,7 @@
       api_token = {{token}}
     </pre>
     <div class="sites">
-      <a class="one-third column" ng-repeat="site in sites" href="/sites/{{site.slug}}">
+      <a class="one-third column" ng-repeat="site in sites | orderBy: '+title'" href="/sites/{{site.slug}}">
         <span class="remove" ng-click="delete_site(site, $event)">&times;</span>
         <h3>{{site.title}}</h3>
         <code> app_slug = {{site.shown_slug}} </code>

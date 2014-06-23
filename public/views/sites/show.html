@@ -14,8 +14,8 @@
     </div>
 
     <div class="pages">
-      <a class="one-third column" ng-repeat="page in site.pages" href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">
-        <span class="remove" ng-click="delete_page(page, $event)">&times;</span>
+      <a class="one-third column" ng-repeat="page in site.pages | orderBy: '+title'" href="/sites/{{site.slug}}/pages/{{page.slug}}/edit">
+        <span ng-show="page.deletable !== undefined && page.deletable !== false" class="remove" ng-click="delete_page(page, $event)">&times;</span>
         <h3>{{page.title}}</h3>
         <code> page_slug = {{page.shown_slug}} </code>
       </a>
